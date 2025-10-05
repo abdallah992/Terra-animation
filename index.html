@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Terra Data Visualization Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dynamic visualization of NASA's Terra satellite data: See Earth's changes, climate trends, and more.">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* 🌍 RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f7f9fc;
+      color: #222;
+      overflow-x: hidden;
+    }
+
+    /* 🎥 Background Video */
+    #bgVideo {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+      filter: brightness(0.6);
+    }
+
+    /* 🔝 Header */
+    header {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      padding: 10px 0;
+      backdrop-filter: blur(6px);
+      animation: fadeSlideDown 1s ease-in-out;
+    }
+
+    .header-container {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-img {
+      width: 70px;
+      animation: fadeZoom 1.2s ease-in-out;
+    }
+
+    .main-nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .main-nav a:hover {
+      color: #4fc3f7;
+    }
+
+    /* ✨ Sections */
+    main {
+      padding-top: 100px;
+      width: 90%;
+      margin: auto;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    section {
+      margin-bottom: 60px;
+      text-align: center;
+      animation: fadeSlideUp 1.5s ease-in-out;
+    }
+
+    h2 {
+      font-size: 2em;
+      color: #1e3a5c;
+      margin-bottom: 20px;
+    }
+
+    p, li {
+      font-size: 1.1em;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    /* 🎬 Video Box */
+    .video-layout {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .video-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(255,255,255,0.8);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      animation: fadeSlideUp 1.5s ease-in-out;
+    }
+
+    video {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .video-caption {
+      margin-top: 15px;
+      background: rgba(255,255,255,0.9);
+      padding: 15px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+      animation: fadeSlideUp 2s ease-in-out;
+    }
+
+    .lang-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .lang-buttons button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      background: #1e3a5c;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .lang-buttons button:hover {
+      background: #3699e0;
+    }
+
+    /* 🎞️ Animations */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes fadeSlideUp {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeSlideDown {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeZoom {
+      from {opacity: 0; transform: scale(0.8);}
+      to {opacity: 1; transform: scale(1);}
+    }
+
+    /* 📱 Responsive */
+    @media (max-width: 768px) {
+      .video-box {
+        width: 100%;
+      }
+
+      .main-nav {
+        display: none;
+      }
+
+      #menuToggle {
+        display: block;
+        background: none;
+        color: white;
+        border: none;
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <video autoplay muted loop playsinline id="bgVideo" aria-label="Background animation">
+    <source src="https://onedrive.live.com/ac378658-77c7-4a4a-89e1-968c41f6adaa" type="video/mp4">
+  </video>
+
+  <header>
+    <div class="header-container">
+      <div class="logo-title">
+        <img src="logo.png" alt="Terra Logo" class="logo-img">
+      </div>
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="team.html" class="nav-link">About Team</a>
+        <a href="challenge_steps.html" class="nav-link">Challenge Steps</a>
+        <a href="https://worldview.earthdata.nasa.gov/" class="nav-link">Interactive Map</a>
+      </nav>
+      <button id="menuToggle" aria-label="Toggle menu">&#9776;</button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="welcome-section">
+      <h2>Welcome!</h2>
+      <p>Explore the dynamic visualization of data collected by NASA's Terra satellite. Discover how Earth is changing through insightful maps and animations.</p>
+    </section>
+
+    <section class="video-layout">
+      <div class="video-box">
+        <video controls poster="poster.png" aria-label="Terra Satellite Video">
+    <source src="https://streamable.com/a8pci7" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+        <div class="video-caption video-text-box">
+          <div class="lang-buttons">
+            <button id="arabicBtn" aria-label="Arabic">العربي</button>
+            <button id="englishBtn" aria-label="English">English</button>
+          </div>
+          <div id="videoText" class="video-text" aria-live="polite">
+            هذا الفيديو يعرض تصورًا ديناميكيًا للبيانات التي جمعها قمر تيرا الصناعي...
+          </div>
+          <div class="video-subtitle" aria-label="Video Subtitle">Terra Satellite Data Visualization</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="description-section" id="challenge">
+      <h2>Project Explanation</h2>
+      <p>
+        This video presents a dynamic visualization of data collected by NASA's Terra satellite. 
+        It demonstrates how remote sensing technologies capture Earth's surface changes, including vegetation, urban expansion, and atmospheric phenomena. 
+        The visualization highlights key trends and anomalies, helping scientists and the public better understand our planet's evolving environment.
+      </p>
+    </section>
+
+    <section class="about-section" id="about-team">
+      <h2>About Terra Satellite</h2>
+      <ul>
+        <li><strong>Launched:</strong> December 18, 1999</li>
+        <li><strong>Mission:</strong> Part of NASA’s Earth Observing System (EOS)</li>
+        <li><strong>Instruments:</strong> MODIS, ASTER, CERES, MISR, MOPITT</li>
+        <li><strong>Purpose:</strong> Monitors Earth's atmosphere, land, and oceans</li>
+        <li><strong>Achievements:</strong> Provided critical climate data, mapped global fires, tracked pollution, and more</li>
+      </ul>
+    </section>
+  </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

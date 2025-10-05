@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Team</title>
+  <style>
+    :root {
+      --primary: #1e3a5c;
+      --accent: #3699e0;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #0b1220, #0f1a2b, #000);
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    /* ====== الهيدر ====== */
+    header {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(30,58,92,0.2);
+      position: relative;
+      padding: 0.5rem 1rem;
+    }
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .logo-img {
+      height: 50px;
+      width: auto;
+    }
+    .main-nav {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .main-nav .nav-link {
+      padding: 0.6rem 0.8rem;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .main-nav .nav-link:hover, .main-nav .nav-link.active {
+      background: var(--accent);
+    }
+
+    /* ====== العنوان ====== */
+    .team-title {
+      margin-top: 50px;
+    }
+    .team-title h1 {
+      font-size: 40px;
+      margin: 0;
+    }
+    .team-title .line {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(to right, #38bdf8, #1e40af);
+      margin: 20px auto 0;
+    }
+
+    /* ====== أعضاء الفريق ====== */
+    .team-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .member {
+      position: relative;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .member:nth-child(1) { animation-delay: 0.1s; }
+    .member:nth-child(2) { animation-delay: 0.3s; }
+    .member:nth-child(3) { animation-delay: 0.5s; }
+    .member:nth-child(4) { animation-delay: 0.7s; }
+    .member:nth-child(5) { animation-delay: 0.9s; }
+    .member:nth-child(6) { animation-delay: 1.1s; }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .member img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 2px solid rgba(255,255,255,0.15);
+      transition: transform 0.4s ease;
+    }
+
+    .member:hover img {
+      transform: scale(1.05);
+    }
+
+    .member .number {
+      font-size: 12px;
+      color: #aaa;
+      margin-top: 10px;
+    }
+
+    .member .name {
+      font-size: 16px;
+      margin-top: 4px;
+      font-weight: bold;
+    }
+
+    /* ====== الوصف عند المرور ====== */
+    .description {
+      position: absolute;
+      inset: 15px;
+      background: rgba(0, 0, 0, 0.75);
+      color: #fff;
+      border-radius: 10px;
+      opacity: 0;
+      visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      line-height: 1.5;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+
+    .member:hover .description {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    footer {
+      margin: 40px auto;
+      color: rgba(255,255,255,0.6);
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      .team-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .team-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ====== الهيدر ====== -->
+  <header>
+    <div class="header-container">
+      <img src="logo.png" alt="Terra Logo" class="logo-img">
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="team.html" class="nav-link active">About Team</a>
+        <a href="challenge_steps.html" class="nav-link">Challenge Steps</a>
+        <a href="https://worldview.earthdata.nasa.gov/" class="nav-link">Interactive Map</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ====== العنوان ====== -->
+  <section class="team-title">
+    <h1>OUR TEAM</h1>
+    <div class="line"></div>
+  </section>
+
+  <!-- ====== الفريق ====== -->
+  <section class="team-container">
+    <div class="member">
+      <img src="fatema.jpg" alt="Fatma Ali">
+      <div class="number">01</div>
+      <div class="name">Fatma Ali</div>
+      <div class="description">#</div>
+    </div>
+
+    <div class="member">
+      <img src="ahmed.jpg" alt="Ahmed Alaa">
+      <div class="number">02</div>
+      <div class="name">Ahmed Alaa</div>
+      <div class="description">#</div>
+    </div>
+
+    <div class="member">
+      <img src="marez.jpg" alt="Marez Nabil">
+      <div class="number">03</div>
+      <div class="name">Marez Nabil</div>
+      <div class="description">#</div>
+    </div>
+
+    <div class="member">
+      <img src="ahmed_sherif.jpg" alt="Ahmed Sherif">
+      <div class="number">04</div>
+      <div class="name">Ahmed Sherif</div>
+      <div class="description"></div>
+    </div>
+
+    <div class="member">
+      <img src="basmala.jpg" alt="Basmala Salah">
+      <div class="number">05</div>
+      <div class="name">Basmala Salah</div>
+      <div class="description">#</div>
+    </div>
+
+    <div class="member">
+      <img src="abdallah.jpg" alt="Abdallah Raafat">
+      <div class="number">06</div>
+      <div class="name">Abdallah Raafat</div>
+      <div class="description">#</div>
+    </div>
+  </section>
+</body>
+</html>

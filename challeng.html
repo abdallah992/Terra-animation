@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NASA Space Apps 2025 – Terra Data Challenge</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Simplified explanation of NASA's 2025 Space Apps Terra Data Animation Challenge.">
+  <style>
+    /* 🌍 RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to bottom, #e8f3ff, #f7f9fc);
+      color: #222;
+      overflow-x: hidden;
+    }
+
+    /* 🎥 Background */
+    #bgVideo {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.6);
+    }
+
+    /* 🔝 Header */
+    header {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      padding: 10px 0;
+      backdrop-filter: blur(6px);
+      animation: fadeSlideDown 1s ease-in-out;
+    }
+
+    .header-container {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-img {
+      width: 70px;
+      animation: fadeZoom 1.2s ease-in-out;
+    }
+
+    .main-nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .main-nav a:hover {
+      color: #4fc3f7;
+    }
+
+    /* ✨ Main */
+    main {
+      padding-top: 120px;
+      width: 90%;
+      margin: auto;
+      text-align: center;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    h1 {
+      color: #1e3a5c;
+      font-size: 2.4em;
+      margin-bottom: 10px;
+      animation: fadeSlideUp 1.2s ease-in-out;
+    }
+
+    h2 {
+      color: #1e3a5c;
+      margin-top: 30px;
+    }
+
+    p {
+      font-size: 1.1em;
+      line-height: 1.7;
+      margin-top: 15px;
+      color: #333;
+      animation: fadeSlideUp 1.5s ease-in-out;
+    }
+
+    section {
+      background: rgba(255, 255, 255, 0.9);
+      margin: 30px auto;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      max-width: 900px;
+      animation: fadeSlideUp 1.5s ease-in-out;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      color: #777;
+      font-size: 0.9em;
+      padding-bottom: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    /* 🎞️ Animations */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes fadeSlideUp {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeSlideDown {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeZoom {
+      from {opacity: 0; transform: scale(0.8);}
+      to {opacity: 1; transform: scale(1);}
+    }
+
+    /* 📱 Responsive */
+    @media (max-width: 768px) {
+      .main-nav {
+        display: none;
+      }
+
+      #menuToggle {
+        display: block;
+        background: none;
+        color: white;
+        border: none;
+        font-size: 24px;
+      }
+
+      section {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 🌌 Background -->
+  <video autoplay muted loop playsinline id="bgVideo">
+    <source src="background.mp4" type="video/mp4">
+  </video>
+
+  <!-- 🛰 Header -->
+  <header>
+    <div class="header-container">
+      <div class="logo-title">
+        <img src="logo.png" alt="Terra Logo" class="logo-img">
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="team.html">About Team</a>
+        <a href="challenge_steps.html">Challenge Steps</a>
+        <a href="https_challenge.html">Terra Challenge</a>
+        <a href="https://worldview.earthdata.nasa.gov/">Interactive Map</a>
+      </nav>
+      <button id="menuToggle" aria-label="Toggle menu">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- 🌍 Main Content -->
+  <main>
+    <h1>NASA Space Apps 2025 – Terra Data Challenge</h1>
+    <p><strong>Theme:</strong> Animation Celebration of Terra Data!</p>
+
+    <section>
+      <h2>🛰️ Simplified Explanation (English)</h2>
+      <p>
+        NASA’s Terra satellite has been observing Earth for over 25 years and has collected an incredible amount of data about our planet.
+        In this challenge, you will use data from Terra’s instruments to create an <strong>animation or video</strong> that tells a story about Earth.
+      </p>
+      <p>
+        Your animation could show how forests change, how cities grow, or how pollution spreads over time.
+        You can use 2D or 3D visuals, maps, or creative designs — anything that helps show how the Earth changes using Terra’s data.
+      </p>
+      <p>
+        The goal is to make science fun and visual — show the impact of Earth’s changes on people, nature, and the environment.
+      </p>
+    </section>
+
+    <section dir="rtl" style="text-align:right;">
+      <h2>🌎 الشرح المبسط بالعربية</h2>
+      <p>
+        قمر “تيرا” الصناعي من ناسا بيصور كوكب الأرض يوميًا من أكتر من 25 سنة وجمع بيانات ضخمة جدًا عن الكوكب.
+      </p>
+      <p>
+        في التحدي ده، المطلوب إنك تستخدم بيانات “تيرا” علشان تعمل <strong>فيديو أو أنيميشن</strong> يوضح قصة عن الأرض — زي تغير الغابات، توسع المدن، أو انتشار التلوث مع الزمن.
+      </p>
+      <p>
+        ممكن تستخدم صور ثنائية أو ثلاثية الأبعاد، خرائط، أو أي أسلوب بصري يوضح الفكرة. الهدف إنك تخلّي العلم ممتع ومرئي، وتوضح تأثير التغيرات دي على الإنسان والبيئة.
+      </p>
+    </section>
+
+
+  </main>
+</body>
+</html>

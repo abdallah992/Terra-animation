@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Steps</title>
+  <style>
+    :root {
+      --primary: #1e3a5c;
+      --accent: #3aa7f9;
+      --bg-dark: #0b1220;
+      --bg-mid: #0f1a2b;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(to bottom, var(--bg-dark), var(--bg-mid), #000);
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+      animation: fadeInBody 1.5s ease forwards;
+    }
+
+    @keyframes fadeInBody {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    /* ====== Header ====== */
+    header {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(30,58,92,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      opacity: 0;
+      animation: fadeSlideDown 1.5s ease forwards;
+    }
+
+    @keyframes fadeSlideDown {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0.5rem 1rem;
+    }
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .logo-img {
+      height: 50px;
+      width: auto;
+    }
+
+    .main-nav {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-link {
+      padding: 0.6rem 0.9rem;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 0 10px rgba(58,167,249,0.5);
+    }
+
+    /* ====== Title Section ====== */
+    .steps-title {
+      margin-top: 60px;
+      opacity: 0;
+      animation: fadeSlideUp 1.5s ease forwards;
+      animation-delay: 0.3s;
+    }
+
+    @keyframes fadeSlideUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .steps-title h1 {
+      font-size: 42px;
+      margin: 0;
+      letter-spacing: 1px;
+      color: #fff;
+      text-shadow: 0 2px 10px rgba(58,167,249,0.3);
+    }
+
+    .steps-title .line {
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(to right, #38bdf8, #1e40af);
+      margin: 20px auto 0;
+      border-radius: 2px;
+    }
+
+    /* ====== Steps Section ====== */
+    .steps-container {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+      text-align: left;
+      line-height: 1.8;
+      opacity: 0;
+      animation: fadeSlideUp 1.5s ease forwards;
+      animation-delay: 0.6s;
+    }
+
+    .steps-container ol {
+      counter-reset: step-counter;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .steps-container li {
+      position: relative;
+      background: rgba(255,255,255,0.05);
+      border-left: 4px solid var(--accent);
+      margin: 20px 0;
+      padding: 15px 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      font-size: 16px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .steps-container li:hover {
+      background: rgba(255,255,255,0.08);
+      transform: translateX(5px);
+    }
+
+    .steps-container li::before {
+      counter-increment: step-counter;
+      content: counter(step-counter) '. ';
+      color: var(--accent);
+      font-weight: bold;
+      margin-right: 8px;
+    }
+
+    footer {
+      margin: 60px auto;
+      color: rgba(255,255,255,0.6);
+      font-size: 14px;
+      opacity: 0;
+      animation: fadeSlideUp 1.5s ease forwards;
+      animation-delay: 1s;
+    }
+  </style>
+</head>
+<body>
+  <!-- ====== Header ====== -->
+  <header>
+    <div class="header-container">
+      <div class="logo-title">
+        <img src="logo.png" alt="Terra Logo" class="logo-img">
+      </div>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="team.html" class="nav-link">About Team</a>
+        <a href="#steps" class="nav-link active">Challenge Steps</a>
+        <a href="https://worldview.earthdata.nasa.gov/" class="nav-link">Interactive Map</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ====== Title ====== -->
+  <section class="steps-title">
+    <h1>STEPS MAKING THE PROJECT</h1>
+    <div class="line"></div>
+  </section>
+
+  <!-- ====== Steps Section ====== -->
+  <section class="steps-container">
+    <ol>
+      <li><b>FIGMA</b> used to make the slides design of the web (UI/UX).</li>
+      <li><b>HTML</b> used to design the web structure.</li>
+      <li><b>CSS</b> used for formatting the web.</li>
+      <li><b>JS</b> used for calling tasks, creating functions, and building an interactive integrated environment.</li>
+      <li><b>Bootstrap</b> was used to make the site responsive to all environments and screens.</li>
+    </ol>
+  </section>
+</body>
+</html>
